@@ -443,3 +443,6 @@ xnoremap <leader>p "_dP
 
 nmap <S-Enter> o<Esc>
 nmap <CR> O<Esc>j
+
+" Remap Visual bloc Selection
+:nnoremap q <c-v>
