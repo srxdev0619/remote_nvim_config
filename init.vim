@@ -444,6 +444,7 @@ xnoremap <leader>p "_dP
 nmap <S-Enter> o<Esc>
 nmap <CR> O<Esc>j
 
+nnoremap r q
 " Remap Visual bloc Selection
 :nnoremap q <c-v>
 
