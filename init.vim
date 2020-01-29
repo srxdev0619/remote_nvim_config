@@ -36,6 +36,8 @@ set ve=all
 call plug#begin('~/.config/nvim/plugged')
 
 "" Now the actual plugins:
+" Linters
+Plug 'dense-analysis/ale'
 
 "Markdown Plugin
 Plug 'godlygeek/tabular'
