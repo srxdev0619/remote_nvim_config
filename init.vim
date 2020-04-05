@@ -463,7 +463,7 @@ nnoremap <Down> :echoe "Use j"<CR>
 "\}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['black', 'isort'],
+\   'python': ['black', 'isort', 'add_blank_lines_for_python_control_statements'],
 \}
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
