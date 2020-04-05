@@ -455,3 +455,17 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 :nnoremap <Space> @
+
+" ALE config
+"let g:ale_fixers = {
+"\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+"\   'python': ['add_blank_lines_for_python_control_statements','autopep8', 'black', 'isort','reorder-python-imports', 'yapf'],
+"\}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['black', 'isort'],
+\}
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:ale_fix_on_insert_leave = 1
+let g:ale_fix_on_save = 1
