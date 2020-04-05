@@ -108,7 +108,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'jeetsukumaran/vim-indentwise'
 
 " Better language packs
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 
 " Ack code search (requires ack installed in the system)
 Plug 'mileszs/ack.vim'
