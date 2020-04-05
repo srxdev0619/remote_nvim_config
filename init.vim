@@ -35,6 +35,8 @@ set ve=all
 " want to use
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'kurkale6ka/vim-swap'
+
 "" Now the actual plugins:
 " Linters
 Plug 'dense-analysis/ale'
@@ -176,6 +178,10 @@ set softtabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
+set t_Co=256
+set list
+set listchars=tab:>-
+" set termguicolors
 " set statusline+=%F
 " show line numbers
 " set number
@@ -195,15 +201,9 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 "Indent Guide
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " remove ugly vertical lines on window division
-set fillchars+=vert:\ 
+set fillchars+=vert:\
 
-" use 256 colors when possible
-if (&term =~? 'mlterm\|xterm\|xterm-256\|screen-256') || has('nvim')
-	let &t_Co = 256
-    colorscheme molokai-dark
-else
-    colorscheme molokai-dark
-endif
+
 
 " needed so deoplete can auto select the first suggestion
 set completeopt+=noinsert
@@ -219,7 +219,7 @@ set wildmode=list:longest
 ca w!! w !sudo tee "%"
 
 " tab navigation mappings
-map tt :tabnew 
+map tt :tabnew
 map <M-Right> :tabn<CR>
 imap <M-Right> <ESC>:tabn<CR>
 map <M-Left> :tabp<CR>
@@ -236,7 +236,7 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 
 " fix problems with uncommon shells (fish, xonsh) and plugins running commands
 " (neomake, ...)
-set shell=/bin/bash 
+set shell=/bin/bash
 
 " Ability to add python breakpoints
 " (I use ipdb, but you can change it to whatever tool you use for debugging)
@@ -343,10 +343,10 @@ let g:jedi#goto_assignments_command = ',a'
 " Go to definition in new tab
 nmap ,D :tab split<CR>:call jedi#goto()<CR>
 
-" Ack.vim ------------------------------
+"  Ack.vim ------------------------------
 
 " mappings
-nmap ,r :Ack 
+nmap ,r :Ack
 nmap ,wr :Ack <cword><CR>
 
 " Window Chooser ------------------------------
@@ -414,12 +414,24 @@ let g:airline_section_c = "%F"
 if filereadable(expand("~/.config/nvim/custom.vim"))
   source ~/.config/nvim/custom.vim
 endif
-let g:syntastic_mode_map = { 'passive_filetypes': ['python', 'markdown'] }
+"let g:syntastic_mode_map = { 'passive_filetypes': ['python', 'markdown'] }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+let g:syntastic_check_on_open = 0
 let g:pymode_lint = 0
 let python_space_error_highlight = 1
 let g:semshi#error_sign = 1
 set clipboard+=unnamedplus
 set hidden
+filetype indent plugin on
+
+" use 256 colors when possible
+if (&term =~? 'mlterm\|xterm\|xterm-256\|screen-256') || has('nvim')
+	let &t_Co = 256
+    colorscheme molokai-dark
+else
+    let &t_Co = 256
+    colorscheme molokai-dark
+endif
 
 vnoremap [p "0p
 vnoremap [P "0P
@@ -454,6 +466,7 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
+
 :nnoremap <Space> @
 
 " ALE config
@@ -469,3 +482,4 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:ale_fix_on_insert_leave = 1
 let g:ale_fix_on_save = 1
+"
