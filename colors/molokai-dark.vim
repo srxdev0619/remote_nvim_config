@@ -14,13 +14,13 @@ hi CursorLine                         guibg=#1C1C1C                            c
 hi CursorColumn                       guibg=#1C1C1C                            ctermbg=234
 
 hi Constant             guifg=#AE81FF                             ctermfg=135
- hi String              guifg=#FFDF5F                             ctermfg=221
- hi Character           guifg=#FFDF5F                             ctermfg=221
+ hi String              guifg=#FFDF5F                             ctermfg=221               cterm=italic
+ hi Character           guifg=#FFDF5F                             ctermfg=221               cterm=italic
  hi Number              guifg=#AE81FF                             ctermfg=135
  hi Boolean             guifg=#AE81FF                             ctermfg=135
  hi Float               guifg=#AE81FF                             ctermfg=135
 
-hi Identifier           guifg=#FD971F                             ctermfg=208               cterm=none
+hi Identifier           guifg=#FD971F                             ctermfg=208               cterm=italic
  hi Function            guifg=#A6E22E               gui=italic    ctermfg=118               cterm=italic
 
 hi Statement            guifg=#F92672                             ctermfg=197
@@ -34,17 +34,17 @@ hi Statement            guifg=#F92672                             ctermfg=197
 hi PreProc              guifg=#A6E22E                             ctermfg=118
  hi Include             guifg=#A6E22E                             ctermfg=118
  hi Define              guifg=#66D9EF                             ctermfg=81
- hi Macro               guifg=#C4BE89               gui=italic    ctermfg=193
+ hi Macro               guifg=#C4BE89               gui=italic    ctermfg=193               cterm=italic
  hi PreCondit           guifg=#A6E22E                             ctermfg=118
 
-hi Type                 guifg=#66D9EF               gui=none      ctermfg=81                cterm=none
+hi Type                 guifg=#66D9EF               gui=none      ctermfg=81                cterm=italic
  hi StorageClass        guifg=#FD971F               gui=italic    ctermfg=208               cterm=italic
  hi Structure           guifg=#66D9EF                             ctermfg=81
  hi Typedef             guifg=#66D9EF                             ctermfg=81
 
-hi Special              guifg=#66D9EF guibg=bg      gui=italic    ctermfg=81
+hi Special              guifg=#66D9EF guibg=bg      gui=italic    ctermfg=81                cterm=italic
  hi SpecialChar         guifg=#F92672               gui=bold      ctermfg=197               cterm=bold
- hi Tag                 guifg=#F92672               gui=italic    ctermfg=197
+ hi Tag                 guifg=#F92672               gui=italic    ctermfg=197               cterm=italic
  hi Delimiter           guifg=#8F8F8F                             ctermfg=241
  hi SpecialComment      guifg=#7E8E91               gui=bold      ctermfg=245               cterm=bold
  hi SpecialKey          guifg=#465457                             ctermfg=239
@@ -88,9 +88,9 @@ hi PmenuThumb           guifg=#66D9EF                             ctermfg=81
 hi WildMenu             guifg=#66D9EF guibg=#000000               ctermfg=81   ctermbg=16
 
 if has("spell")
-    hi SpellBad         guisp=#FF0000               gui=undercurl              ctermbg=52
-    hi SpellCap         guisp=#7070F0               gui=undercurl              ctermbg=17
-    hi SpellLocal       guisp=#70F0F0               gui=undercurl              ctermbg=17
+    hi SpellBad         guisp=#FF0000               gui=undercurl              ctermbg=52   cterm=reverse
+    hi SpellCap         guisp=#7070F0               gui=undercurl              ctermbg=17   cterm=reverse
+    hi SpellLocal       guisp=#70F0F0               gui=undercurl              ctermbg=17   cterm=reverse
     hi SpellRare        guisp=#FFFFFF               gui=undercurl ctermfg=none ctermbg=none cterm=reverse
 endif
 
@@ -99,7 +99,7 @@ hi Visual                             guibg=#403D3D                            c
 
 hi TabLineFill          guifg=#1B1D1E guibg=#1B1D1E
 hi TabLine              guifg=#808080 guibg=#1B1D1E gui=none
-hi TabLineSel           guifg=#808080 guibg=#5F6061 gui=bold
+hi TabLineSel           guifg=#808080 guibg=#5F6061 gui=bold                                cterm=bold
 
 hi LineNr               guifg=#465457 guibg=#000000               ctermfg=239  ctermbg=0
 hi CursorLineNr         guifg=#FD971F guibg=#1C1C1C gui=none      ctermfg=208  ctermbg=234  cterm=none

@@ -64,6 +64,9 @@ Plug 'vim-scripts/IndexedSearch'
 
 Plug 'ervandew/supertab'
 
+" Install Gruvbox
+" Plug 'morhetz/gruvbox'
+"
 " Terminal Vim with 256 colors colorscheme
 Plug 'fisadev/fisa-vim-colorscheme'
 
@@ -178,7 +181,7 @@ set softtabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
-set t_Co=256
+" set t_Co=256
 set list
 set listchars=tab:>-
 " set termguicolors
@@ -424,14 +427,28 @@ set clipboard+=unnamedplus
 set hidden
 filetype indent plugin on
 
+" Gruvbox setup
+" let g:gruvbox_italic = 1
+" let g:gruvbox_contrast_dark = 'hard'
+" let g:gruvbox_italicize_strings = 1
+" let g:gruvbox_termcolors=16
+" set termguicolors
 " use 256 colors when possible
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 if (&term =~? 'mlterm\|xterm\|xterm-256\|screen-256') || has('nvim')
-	let &t_Co = 256
+	" let &t_Co = 256
+"    set termguicolors
     colorscheme molokai-dark
+"    colorscheme gruvbox
 else
-    let &t_Co = 256
+    " let &t_Co = 256
+"    set termguicolors
     colorscheme molokai-dark
+"    colorscheme gruvbox
 endif
+
+
 
 vnoremap [p "0p
 vnoremap [P "0P
