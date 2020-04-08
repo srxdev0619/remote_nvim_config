@@ -184,12 +184,20 @@ set expandtab
 " set t_Co=256
 set list
 set listchars=tab:>-
+set cursorline
 " set termguicolors
 " set statusline+=%F
 " show line numbers
 " set number
 
 set number relativenumber
+" Semshi setup
+let g:semshi#always_update_all_highlights = 1
+function MyCustomHighlights()
+    hi semshiAttribute       ctermfg=49  guifg=#00ffaf cterm=italic gui=italic
+endfunction
+autocmd FileType python call MyCustomHighlights()
+autocmd ColorScheme * call MyCustomHighlights()
 
 augroup numbertoggle
   autocmd!
@@ -421,7 +429,7 @@ endif
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_check_on_open = 0
 let g:pymode_lint = 0
-let python_space_error_highlight = 1
+let python_space_error_highlight = 0
 let g:semshi#error_sign = 1
 set clipboard+=unnamedplus
 set hidden
@@ -491,12 +499,13 @@ nnoremap <Down> :echoe "Use j"<CR>
 "\   '*': ['remove_trailing_lines', 'trim_whitespace'],
 "\   'python': ['add_blank_lines_for_python_control_statements','autopep8', 'black', 'isort','reorder-python-imports', 'yapf'],
 "\}
+
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['black', 'isort', 'add_blank_lines_for_python_control_statements'],
 \}
+let g:ale_linters = {'python': ['flake8', 'mypy', 'pylint', 'pyre', 'vulture'],}
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:ale_fix_on_insert_leave = 1
 let g:ale_fix_on_save = 1
-"
