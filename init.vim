@@ -483,9 +483,9 @@ xnoremap <leader>p "_dP
 nmap <S-Enter> o<Esc>
 nmap <CR> O<Esc>j
 
-nnoremap zq q
+" nnoremap zq q
 " Remap Visual bloc Selection
-:nnoremap q <c-v>
+:nnoremap Q <c-v>
 
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
