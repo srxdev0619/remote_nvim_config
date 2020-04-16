@@ -1,5 +1,5 @@
 " Based on Tomas Restrepo's molokai theme at https://github.com/tomasr/molokai
-
+" Slightly modified
 hi clear
 syntax reset
 
