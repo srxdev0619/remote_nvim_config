@@ -434,7 +434,7 @@ let g:semshi#error_sign = 1
 set clipboard+=unnamedplus
 set hidden
 filetype indent plugin on
-
+set noswapfile
 " Gruvbox setup
 " let g:gruvbox_italic = 1
 " let g:gruvbox_contrast_dark = 'hard'
