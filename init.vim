@@ -509,3 +509,9 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:ale_fix_on_insert_leave = 1
 let g:ale_fix_on_save = 1
+let g:ale_python_flake8_options = '--select F841,F811,F901,F823,F701,F702,F703,F632,F401,F402,F601,E101,E116,E117,E221,E222,E225,E262,E265,E401,E402,E901,E902,W291,W292,W293'
+let g:ale_python_pylint_options = '--disable=invalid-name'
+" let g:ale_set_highlights = 0
+" highlight link ALEError SpellBad
+" highlight link ALEErrorSignLineNr error
+" highlight link ALEWarning SpellCap
