@@ -503,10 +503,21 @@ nnoremap <Down> :echoe "Use j"<CR>
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['black', 'isort', 'add_blank_lines_for_python_control_statements'],
+\   'cpp': ['clang-format'],
+\   'c': ['clang-format'],
 \}
-let g:ale_linters = {'python': ['flake8', 'mypy', 'pylint', 'pyre', 'vulture'],}
+let g:ale_linters = {'python': ['flake8', 'mypy', 'pylint', 'pyre', 'vulture'],
+\   'cpp':['clangtidy'],
+\   'c': ['clangtidy']}
+let g:ale_cpp_clang_options = '-std=c++1z -O0 -Wextra -Wall -Wpedantic'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:ale_cpp_clangformat_executable = 'clang-format-8'
+let g:ale_cpp_clangtidy_executable = 'clang-tidy-8'
+let g:ale_c_clangformat_executable = 'clang-format-8'
+let g:ale_c_clangtidy_executable = 'clang-tidy-8'
+let g:ale_cpp_clangformat_options = '--style=LLVM'
+let g:ale_c_clangformat_options = '--style=LLVM'
 let g:ale_fix_on_insert_leave = 1
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_insert_leave = 1
