@@ -176,20 +176,11 @@ endif
 
 " tabs and spaces handling
 "set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set smarttab
-set expandtab
+filetype plugin indent on
 " set t_Co=256
 set list
 set listchars=tab:>-
 set cursorline
-" set termguicolors
-" set statusline+=%F
-" show line numbers
-" set number
-
 set number relativenumber
 " Semshi setup
 let g:semshi#always_update_all_highlights = 1
@@ -502,7 +493,7 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['black', 'isort', 'add_blank_lines_for_python_control_statements'],
+\   'python': ['black', 'isort', 'add_blank_lines_for_python_control_statements', 'mypy'],
 \   'cpp': ['clang-format'],
 \   'c': ['clang-format'],
 \}
