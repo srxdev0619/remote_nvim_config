@@ -493,7 +493,7 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['black', 'isort', 'add_blank_lines_for_python_control_statements', 'mypy'],
+\   'python': ['black', 'isort', 'add_blank_lines_for_python_control_statements'],
 \   'cpp': ['clang-format'],
 \   'c': ['clang-format'],
 \}
