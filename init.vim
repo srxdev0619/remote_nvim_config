@@ -35,6 +35,12 @@ set ve=all
 " want to use
 call plug#begin('~/.config/nvim/plugged')
 
+" easymotion
+Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
+
 Plug 'kurkale6ka/vim-swap'
 
 "" Now the actual plugins:
@@ -205,6 +211,26 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " remove ugly vertical lines on window division
 set fillchars+=vert:\
 
+let mapleader='\'
+
+" easymotion config
+map <Leader> <Plug>(easymotion-prefix)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+
+let g:EasyMotion_smartcase = 1
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+map z/ <Plug>(incsearch-easymotion-/)
+map z? <Plug>(incsearch-easymotion-?)
+map zg/ <Plug>(incsearch-easymotion-stay)
 
 
 " needed so deoplete can auto select the first suggestion
