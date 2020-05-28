@@ -189,7 +189,8 @@ set listchars=tab:>-
 set cursorline
 set number relativenumber
 " Semshi setup
-let g:semshi#always_update_all_highlights = 1
+let g:semshi#always_update_all_highlights = v:true
+
 function MyCustomHighlights()
     hi semshiAttribute       ctermfg=49  guifg=#00ffaf cterm=italic gui=italic
 endfunction
