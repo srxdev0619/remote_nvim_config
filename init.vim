@@ -143,7 +143,7 @@ Plug 'mattn/emmet-vim'
 
 " Git integration
 Plug 'tpope/vim-fugitive'
-
+Plug 'tpope/vim-unimpaired'
 " Git/mercurial/others diff icons on the side of the file lines
 " Plug 'mhinz/vim-signify'
 
