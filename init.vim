@@ -74,7 +74,7 @@ Plug 'ervandew/supertab'
 " Plug 'morhetz/gruvbox'
 "
 " Terminal Vim with 256 colors colorscheme
-Plug 'fisadev/fisa-vim-colorscheme'
+" Plug 'fisadev/fisa-vim-colorscheme'
 
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " Airline
@@ -143,9 +143,9 @@ Plug 'mattn/emmet-vim'
 
 " Git integration
 Plug 'tpope/vim-fugitive'
-
+Plug 'tpope/vim-unimpaired'
 " Git/mercurial/others diff icons on the side of the file lines
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 
 " Yank history navigation
 Plug 'vim-scripts/YankRing.vim'
@@ -190,7 +190,7 @@ set cursorline
 set number relativenumber
 " Semshi setup
 let g:semshi#always_update_all_highlights = v:true
-
+let g:semshi#error_sign = 1
 function MyCustomHighlights()
     hi semshiAttribute       ctermfg=49  guifg=#00ffaf cterm=italic gui=italic
 endfunction
@@ -213,6 +213,7 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 set fillchars+=vert:\
 
 let mapleader='\'
+" let g:fzf_layout = { 'down': '30%' }
 
 " easymotion config
 map <Leader> <Plug>(easymotion-prefix)
@@ -402,17 +403,17 @@ let g:choosewin_overlay_enable = 1
 
 " this first setting decides in which order try to guess your current vcs
 " UPDATE it to reflect your preferences, it will speed up opening files
-let g:signify_vcs_list = [ 'git', 'hg' ]
+" let g:signify_vcs_list = [ 'git', 'hg' ]
 " mappings to jump to changed blocks
-nmap <leader>sn <plug>(signify-next-hunk)
-nmap <leader>sp <plug>(signify-prev-hunk)
+" nmap <leader>sn <plug>(signify-next-hunk)
+" nmap <leader>sp <plug>(signify-prev-hunk)
 " nicer colors
-highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
-highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
-highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
-highlight SignifySignAdd    cterm=bold ctermbg=237  ctermfg=119
-highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
-highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
+" highlight DiffAdd           cterm=bold ctermbg=none ctermfg=119
+" highlight DiffDelete        cterm=bold ctermbg=none ctermfg=167
+" highlight DiffChange        cterm=bold ctermbg=none ctermfg=227
+" highlight SignifySignAdd    cterm=bold ctermbg=237  ctermfg=119
+" highlight SignifySignDelete cterm=bold ctermbg=237  ctermfg=167
+" highlight SignifySignChange cterm=bold ctermbg=237  ctermfg=227
 
 " Autoclose ------------------------------
 
@@ -461,7 +462,7 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 let g:syntastic_check_on_open = 0
 let g:pymode_lint = 0
 let python_space_error_highlight = 0
-let g:semshi#error_sign = 1
+
 set clipboard+=unnamedplus
 set hidden
 filetype indent plugin on
